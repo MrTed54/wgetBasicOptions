@@ -14,3 +14,8 @@ wget  -r -p -U Mozilla https://blog.desdelinux.net/
 
 wget --wait=20 --limit-rate=20K -r -p -U Mozilla https://blog.desdelinux.net/
 
+# Comando para Descargar toda las imagenes,gif de un sitio web
+
+wget -nd -H -p -A jpg,jpeg,png,gif -e robots=off <página_web>
+
+
