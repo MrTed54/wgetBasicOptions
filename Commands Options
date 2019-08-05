@@ -1,0 +1,16 @@
+#Para bajar una página:
+
+$ wget https://blog.desdelinux.net/con-el-terminal-bajar-un-sitio-web-completo-con-wget
+
+#Para bajar el sitio completo de forma recursiva, incluyendo imágenes y otros tipos de datos:
+
+$ wget -r https://blog.desdelinux.net/
+
+#Y aquí viene la magia. Como bien nos explican en el artículo de HumanOS, muchos sitios verifican la identidad del navegador para aplicar diversas restricciones. Con Wget podemos burlar esto de la siguiente forma:
+
+wget  -r -p -U Mozilla https://blog.desdelinux.net/
+
+#O también podemos hacer pausa entre cada página, ya que de lo contrario el dueño del sitio puede darse cuenta que e estamos bajando el sitio completamente con Wget.
+
+wget --wait=20 --limit-rate=20K -r -p -U Mozilla https://blog.desdelinux.net/
+
